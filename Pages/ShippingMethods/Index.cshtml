@@ -1,0 +1,42 @@
+﻿@page
+@model Online_Gift_Delivery_Core_Web.Pages.ShippingMethods.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Shipping Methods</h1>
+
+<p>
+    <a asp-page="Create">+Add Shipping Methods</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShippingMethod[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShippingMethod[0].Charge)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ShippingMethod) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Charge)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-primary" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

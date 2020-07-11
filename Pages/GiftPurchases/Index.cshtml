@@ -1,0 +1,48 @@
+﻿@page
+@model Online_Gift_Delivery_Core_Web.Pages.GiftPurchases.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gift Purchases</h1>
+
+<p>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GiftPurchase[0].GiftSender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiftPurchase[0].Gift)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiftPurchase[0].ShippingMethod)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.GiftPurchase) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiftSender.SenderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gift.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingMethod.Name)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-primary" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

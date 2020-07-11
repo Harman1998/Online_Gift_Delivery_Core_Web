@@ -1,0 +1,42 @@
+﻿@page
+@model Online_Gift_Delivery_Core_Web.Pages.GiftSenders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gift Senders</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">+Add New Sender</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GiftSender[0].SenderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiftSender[0].MobileNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.GiftSender) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNumber)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-primary" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,54 @@
+﻿@page
+@model Online_Gift_Delivery_Core_Web.Pages.GiftPurchases.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GiftPurchase</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.GiftSender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.GiftSender.SenderName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.Gift)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.Gift.ItemName)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.Gift.ItemPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.Gift.ItemPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.ShippingMethod)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.ShippingMethod.Name)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.ShippingMethod.Charge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.ShippingMethod.Charge)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="GiftPurchase.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

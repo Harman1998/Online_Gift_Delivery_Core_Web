@@ -1,0 +1,55 @@
+﻿@page
+@model Online_Gift_Delivery_Core_Web.Pages.GiftPurchases.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>GiftPurchase</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="GiftPurchase.Id" />
+            <div class="form-group">
+                <label asp-for="GiftPurchase.GiftSenderId" class="control-label"></label>
+                <select asp-for="GiftPurchase.GiftSenderId" class="form-control" asp-items="ViewBag.GiftSenderId"></select>
+                <span asp-validation-for="GiftPurchase.GiftSenderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GiftPurchase.GiftId" class="control-label"></label>
+                <select asp-for="GiftPurchase.GiftId" class="form-control" asp-items="ViewBag.GiftId"></select>
+                <span asp-validation-for="GiftPurchase.GiftId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GiftPurchase.ShippingMethodId" class="control-label"></label>
+                <select asp-for="GiftPurchase.ShippingMethodId" class="form-control" asp-items="ViewBag.ShippingMethodId"></select>
+                <span asp-validation-for="GiftPurchase.ShippingMethodId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="GiftPurchase.Reciever" class="control-label"></label>
+                <input asp-for="GiftPurchase.Reciever" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="GiftPurchase.RecieverAddress" class="control-label"></label>
+                <input asp-for="GiftPurchase.RecieverAddress" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

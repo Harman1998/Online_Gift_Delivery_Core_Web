@@ -1,0 +1,65 @@
+﻿@page
+@model Online_Gift_Delivery_Core_Web.Pages.GiftPurchases.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>GiftPurchase</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.GiftSender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.GiftSender.SenderName)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.Reciever)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.Reciever)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.RecieverAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.RecieverAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.Gift)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.Gift.ItemName)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.Gift.ItemPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.Gift.ItemPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.ShippingMethod)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.ShippingMethod.Name)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftPurchase.ShippingMethod.Charge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftPurchase.ShippingMethod.Charge)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.GiftPurchase.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

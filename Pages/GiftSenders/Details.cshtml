@@ -1,0 +1,31 @@
+﻿@page
+@model Online_Gift_Delivery_Core_Web.Pages.GiftSenders.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>GiftSender</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftSender.SenderName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftSender.SenderName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GiftSender.MobileNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GiftSender.MobileNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.GiftSender.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
